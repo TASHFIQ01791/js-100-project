@@ -10,19 +10,22 @@ function main(){
     const root=document.getElementById('root');
     // taking the button 
     const changeButton=document.getElementById('btn-change');
-z
+    // taking input area 
+    const inputField=document.getElementById('output');
+
     changeButton.addEventListener('click',function(){
-        const rgbColor=rgbColorGenerator();
-        root.style.backgroundColor=rgbColor;
+        const hexColor=hexColorGenerator();
+        root.style.backgroundColor=hexColor;
+        inputField.value=hexColor;
     })
 }
 
-//step 2: rgb color geneate 
+//step 2: hex color geneate 
 
-const rgbColorGenerator=(r,g,b)=>{4
+const hexColorGenerator=()=>{
     const red=Math.floor(Math.random()*255);
     const green=Math.floor(Math.random()*255);
     const blue=Math.floor(Math.random()*255);
 
-    return `rgb(${red},${green},${blue})`;
+    return `#${red.toString(16)}${green.toString(16)}${blue.toString(16)}`;
 }

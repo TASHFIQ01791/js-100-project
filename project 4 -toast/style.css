@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+h1{
+    text-align: center;
+    margin: 0.5rem;
+}
+#btn-change, .copy-btn{
+    padding: 0.5rem 1.5rem;
+    background-color: gray;
+    border: 0;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: whitesmoke;
+}
+.copy-btn{
+    position: relative;
+    right: 18px;
+    background-color: #7a8e93e6;
+}
+
+#btn-change:hover{
+    background-color: tomato;
+}
+.copy-btn:hover{
+    background-color: tomato;
+}
+#output{
+    padding: 5px;
+    margin: 1rem;
+    border: 1px solid tomato;
+}
+
+/* Implementing Toas Part  */
+.toast-message{
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    background-color: #13c96e;
+    border-radius: 0.25rem;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    color: #000;
+    z-index: 999;
+    box-shadow: 0 4px 8px 0 rgba(0, 1, 0, 0.2);
+}
+
+.toast-message-slide-in{
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: toast-animation-in 0.5s ease-in;
+}
+.toast-message-slide-out{
+    animation: toast-animation-out 0.5s ease-in;
+}
+
+@keyframes toast-animation-in{
+    from{
+        transform: translateX(200px);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes  toast-animation-out{
+    from{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+    to{
+        transform: translateX(200px);
+        opacity: 0;
+    }
+}
